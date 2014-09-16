@@ -79,9 +79,17 @@ par(mfcol=c(2,2))
 plot(fit2)
 ```
 
+To do the diagonosis of model, we generated four plot above which are Residual vs Fitted plot, Scale-Location plot, Normal QQ plot and Residual vs Leverage plot. 
+
+From the Residual vs Fitted plot, we can see the redisuals are allocated around a straight line. So we can confirm the linearity between MPG and other variables in this model. However, we also cannot deny the possibilities of unlinearity because the line is not perfectly straight in the plot.
+
+The normal QQ plot also indicates the well linearity of the model. Due to the points are more or less on the line.
+
 ---
 
 ### Uncertanty Inference
+
+However, we also need to point out the uncertanty of this model. 
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 str(mtcars)
