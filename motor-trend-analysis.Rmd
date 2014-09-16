@@ -5,12 +5,12 @@ date: "16 September 2014"
 output: html_document
 ---
 
-### Section 1. Executive Summary
-
+### Executive Summary
+The objective of this analysis is to compare the miles per garlon (MPG) performance of motors with different transmission type (automatic and mannual). In details, this report reveals which type of transmission is better to cars' MPG performance and how much differences between them. Meanwhile, other factors would also be considered during the analysis.
 
 ---
 
-### Section 2. Exploratory Analysis
+### Exploratory Analysis
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 
@@ -18,7 +18,7 @@ output: html_document
 
 ---
 
-### Section 3. Model Selection
+### Model Selection
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 
@@ -26,7 +26,7 @@ output: html_document
 
 ---
 
-### Section 4. Interpret Coefficient
+### Interpret Coefficient
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 
@@ -34,7 +34,7 @@ output: html_document
 
 ---
 
-### Section 5. Diagonosis (Residual)
+### Diagonosis (Residual)
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 
@@ -42,7 +42,7 @@ output: html_document
 
 ---
 
-### Section 6. Uncertency Inference
+### Uncertanty Inference
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 
@@ -50,7 +50,7 @@ output: html_document
 
 ---
 
-### Section 7. Conclusion
+### Conclusion
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 
