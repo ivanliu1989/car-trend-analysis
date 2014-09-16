@@ -62,12 +62,21 @@ Here we are going to interpret the coefficients of our final model. The details 
 summary(fit2)
 ```
 
+Based on the model summary above, we can see the R-squared is 0.8659 which means that there are arount 86.6% of variance have been explained by the model and the p-value of the model is 1.506e-10 which indicates the model is important enough. 
+
+To be more specific, let's focus on the transmission variable of the model which is the major question we need to answer in this report.
+
+Model 3 tells us that regardless all other factors, manual motor seem to run 7.245 miles higher per gallon than automatic motor does. While considering other significant factors, from our final model 2, the coefficient for transmissionmanual is around 1.81. So, the model tells us that basically a car with manual transmission performs 1.81 MPG higher than that of a car with automatic transmission.
+
+Other coefficients can also tell us that with the increase of cylinder number, horsepower and weight, the mpg performance will decrease to various extent.
+
 ---
 
 ### Diagonosis (Residual)
 
-```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
-
+```{r message=FALSE, warning=FALSE, fig.width=8, fig.align='center', fig.height=8, echo=TRUE, error=FALSE}
+par(mfcol=c(2,2))
+plot(fit2)
 ```
 
 ---
