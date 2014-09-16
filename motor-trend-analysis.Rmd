@@ -16,8 +16,10 @@ The objective of this analysis is to compare the miles per garlon (MPG) performa
 data(mtcars)
 names(mtcars)
 mtcars$cyl <- as.factor(mtcars$cyl)
-
-str(mtcars)
+mtcars$vs <- as.factor(mtcars$vs)
+mtcars$am <- as.factor(mtcars$am)
+mtcars$gear <- as.factor(mtcars$gear)
+mtcars$carb <- as.factor(mtcars$carb)
 ```
 
 ---
@@ -49,8 +51,10 @@ str(mtcars)
 ### Uncertanty Inference
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
-
+str(mtcars)
 ```
+
+According to the above summary, we can see that the training datasets for this regression analysis are really small, which has only 32 observations. It means the further statistical inference based on the existing datasets are highly possible to be biased. Because the number of observations of each variable is to small to say they are normal distributed and linear related to dependent variable.
 
 ---
 
