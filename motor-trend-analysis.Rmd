@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ### Executive Summary
-The objective of this analysis is to compare the miles per garlon (MPG) performance of motors with different transmission type (automatic and mannual). In details, this report reveals which type of transmission is better to cars' MPG performance and how much differences between them. Meanwhile, other factors would also be considered during the analysis.
+The objective of this analysis is to compare the miles per garlon (MPG) performance of motors with different transmission type (automatic and mannual). In details, this report reveals which type of transmission is better to cars' MPG performance and how much differences between them. Meanwhile, other factors would also be considered during the analysis. The regression analysis will be implemented in this study to find the relationships between MPG and other various cars' factors.
 
 ---
 
