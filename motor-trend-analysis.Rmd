@@ -12,7 +12,7 @@ The objective of this analysis is to compare the miles per garlon (MPG) performa
 
 ### Exploratory Analysis
 
-```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
+```{r message=FALSE, warning=FALSE, fig.width=8, fig.align='center', fig.height=4, echo=TRUE, error=FALSE}
 data(mtcars)
 names(mtcars) <- c('MPG','Cylinders','Displacement','Horsepower','RearRatio','Weight','MileTime','VS','Transmission','Gear','Carburetors')
 mtcars[which(mtcars$Transmission==1),9] <- 'manual'
@@ -23,17 +23,34 @@ mtcars$Transmission <- as.factor(mtcars$Transmission)
 mtcars$Gear <- as.factor(mtcars$Gear)
 mtcars$Carburetors <- as.factor(mtcars$Carburetors)
 par(mfcol = c(1,2))
+plot(density(mtcars$MPG)$x,density(mtcars$MPG)$y, xlab="MPG",ylab=NA)
 boxplot(MPG~Transmission, data=mtcars, xlab='Transmission Type',ylab='Miles Per Gallon')
-plot(density(mtcars$MPG),data=mtcars)
 ```
+
+The first diagram above shows that the MPG of motors in train datasets follows normal distribution well which is good for regression analysis. The second diagram reveals a breif description regarding MPG by different transmission types. We can see from the plot that manual motors consume less fuels than automatic motors because both the mean and spred of MPG of manual cars are higher than that of cars with automatic transmission.
 
 ---
 
 ### Model Selection
 
-```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
+The model uses both stepwise search to select the most important variables of model. All the factors are included in this model. Following is the details of the final model selected under stepwise method.
 
+```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
+fit1 <- lm(MPG~., data=mtcars)
+fit2 <- step(fit1,direction='both', k=2, trace=0)
+summary(fit2)
 ```
+
+We can see that a significant part of variables are removed and the remaining factors are important. We can also see that the transmission type has been selected in the model.
+
+We also test the model with only transmission as independent variable and compare it with the previous two models. Following are the results of comparison.
+
+```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
+fit3 <- lm(MPG~Transmission, data=mtcars)
+anova(fit3,fit2,fit1)
+```
+
+From the results above, from model 3 to model 2, it has a P-value of 1.476e-05 which means it is worthy to accept model 2 while the P-value of model three is much larger than 0.05, so there is not much diffences to add extra variables in model 3. Lastly, we select model 2 as our final model.
 
 ---
 
