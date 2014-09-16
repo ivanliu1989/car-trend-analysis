@@ -101,8 +101,10 @@ According to the above summary, we can see that the training datasets for this r
 
 ### Conclusion
 
-```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
-
-```
+Overall, the regression analysis above can fairly tackle the problems from motor trend. The model indicates that cars with manual transmission always perform better on MPG performance. On average, manual cars can run around 1.8 more miles per gallon than automatic cars. Meanwhile, it has been proved that other factors like cylinders, horsepower and weight 
+seem to have negative impacts on MPG performance. 
 
 ---
+
+##### Thank you for your time!
+##### Tianxiang Liu
