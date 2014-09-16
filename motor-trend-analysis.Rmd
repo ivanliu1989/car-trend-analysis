@@ -14,12 +14,17 @@ The objective of this analysis is to compare the miles per garlon (MPG) performa
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 data(mtcars)
-names(mtcars)
-mtcars$cyl <- as.factor(mtcars$cyl)
-mtcars$vs <- as.factor(mtcars$vs)
-mtcars$am <- as.factor(mtcars$am)
-mtcars$gear <- as.factor(mtcars$gear)
-mtcars$carb <- as.factor(mtcars$carb)
+names(mtcars) <- c('MPG','Cylinders','Displacement','Horsepower','RearRatio','Weight','MileTime','VS','Transmission','Gear','Carburetors')
+mtcars[which(mtcars$Transmission==1),9] <- 'manual'
+mtcars[which(mtcars$Transmission==0),9] <- 'automatic'
+mtcars$Cylinders <- as.factor(mtcars$Cylinders)
+mtcars$VS <- as.factor(mtcars$VS)
+mtcars$Transmission <- as.factor(mtcars$Transmission)
+mtcars$Gear <- as.factor(mtcars$Gear)
+mtcars$Carburetors <- as.factor(mtcars$Carburetors)
+par(mfcol = c(1,2))
+boxplot(MPG~Transmission, data=mtcars, xlab='Transmission Type',ylab='Miles Per Gallon')
+plot(density(mtcars$MPG),data=mtcars)
 ```
 
 ---
