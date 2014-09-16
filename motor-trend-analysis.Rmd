@@ -13,7 +13,11 @@ The objective of this analysis is to compare the miles per garlon (MPG) performa
 ### Exploratory Analysis
 
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
+data(mtcars)
+names(mtcars)
+mtcars$cyl <- as.factor(mtcars$cyl)
 
+str(mtcars)
 ```
 
 ---
