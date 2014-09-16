@@ -38,7 +38,7 @@ The model uses both stepwise search to select the most important variables of mo
 ```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
 fit1 <- lm(MPG~., data=mtcars)
 fit2 <- step(fit1,direction='both', k=2, trace=0)
-summary(fit2)
+fit2$coef
 ```
 
 We can see that a significant part of variables are removed and the remaining factors are important. We can also see that the transmission type has been selected in the model.
@@ -56,8 +56,10 @@ From the results above, from model 3 to model 2, it has a P-value of 1.476e-05 w
 
 ### Interpret Coefficient
 
-```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
+Here we are going to interpret the coefficients of our final model. The details of the model have been displayed below.
 
+```{r message=FALSE, warning=FALSE, fig.width=6, fig.align='center', fig.height=3, echo=TRUE, error=FALSE}
+summary(fit2)
 ```
 
 ---
